@@ -8,14 +8,14 @@ variable "aws_region" {
 variable "cluster_name" {
   description = "Name of the EKS cluster; also used as a prefix for related resources"
   type        = string
-  default     = "smartcloud-eks"
+  default     = "pod7cloud-eks"
 }
 
 # ---- Networking ----
 variable "vpc_name" {
   description = "Name tag of the VPC"
   type        = string
-  default     = "smartcloud-vpc"
+  default     = "pod7cloud-vpc"
 }
 
 variable "vpc_cidr" {
@@ -68,7 +68,7 @@ variable "cluster_endpoint_public_access_cidrs" {
 variable "cluster_admin_arns" {
   description = "Extra IAM users/roles that get cluster-admin. The identity that runs terraform apply (the GitHub OIDC role) is admin automatically, so do NOT list it here."
   type        = list(string)
-  default = ["arn:aws:iam::935902555626:user/James-Admin"]
+  default     = ["arn:aws:iam::935902555626:user/James-Admin"]
 }
 
 # ---- Worker nodes ----
@@ -111,7 +111,7 @@ variable "node_max_size" {
 variable "key_pair_name" {
   description = "Name of the EC2 key pair (private key is written to <name>.pem)"
   type        = string
-  default     = "smartcloud-eks-key"
+  default     = "pod7cloud-eks-key"
 }
 
 # ---- Helm chart versions ----
