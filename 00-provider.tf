@@ -23,7 +23,7 @@ terraform {
     encrypt      = true
     use_lockfile = true
   }
-  }
+}
 
 # Credentials come from the environment: ~/.aws/credentials locally,
 # GitHub Actions secrets in CI. Never put access keys in this file.
