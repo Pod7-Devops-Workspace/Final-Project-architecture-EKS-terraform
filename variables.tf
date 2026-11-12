@@ -2,7 +2,8 @@
 variable "aws_region" {
   description = "AWS region to deploy into"
   type        = string
-  default     = "us-west-1"
+  default     = "
+us-west-2"
 }
 
 variable "cluster_name" {
@@ -68,7 +69,7 @@ variable "cluster_endpoint_public_access_cidrs" {
 variable "cluster_admin_arns" {
   description = "Extra IAM users/roles that get cluster-admin. The identity that runs terraform apply (the GitHub OIDC role) is admin automatically, so do NOT list it here."
   type        = list(string)
-  default     = ["arn:aws:iam::935902555626:user/James-Admin"]
+  default     = ["arn:aws:iam::174022950431:user/POD7-DEVOPS"]
 }
 
 # ---- Worker nodes ----
@@ -182,7 +183,8 @@ variable "efs_transition_to_ia" {
 variable "kubeconfig_bucket" {
   description = "S3 bucket where the admin kubeconfig is uploaded"
   type        = string
-  default     = "terraformstate-935902555626"
+  default     = "
+terraformstate-174022950431-us-west-2-an"
 }
 
 variable "kubeconfig_s3_key" {
