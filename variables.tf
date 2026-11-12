@@ -2,8 +2,7 @@
 variable "aws_region" {
   description = "AWS region to deploy into"
   type        = string
-  default     = "
-us-west-2"
+  default     = "us-west-2"
 }
 
 variable "cluster_name" {
@@ -94,7 +93,7 @@ variable "node_disk_size" {
 variable "node_desired_size" {
   description = "Desired number of worker nodes"
   type        = number
-  default     = 2 # 4 x t2.medium hit the 17-pods-per-node limit
+  default     = 4
 }
 
 variable "node_min_size" {
@@ -106,7 +105,7 @@ variable "node_min_size" {
 variable "node_max_size" {
   description = "Maximum number of worker nodes"
   type        = number
-  default     = 2
+  default     = 4
 }
 
 variable "key_pair_name" {
@@ -183,8 +182,7 @@ variable "efs_transition_to_ia" {
 variable "kubeconfig_bucket" {
   description = "S3 bucket where the admin kubeconfig is uploaded"
   type        = string
-  default     = "
-terraformstate-174022950431-us-west-2-an"
+  default     = "terraformstate-174022950431-us-west-2-an"
 }
 
 variable "kubeconfig_s3_key" {
