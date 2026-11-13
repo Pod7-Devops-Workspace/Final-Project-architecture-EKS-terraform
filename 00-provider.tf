@@ -17,7 +17,7 @@ terraform {
   # Remote state in S3 (encrypted, with S3-native state locking).
   # Backend blocks cannot use variables, so these values are set here directly.
   backend "s3" {
-    bucket       = "terraformstate-174022950431-us-west-2-an"
+    bucket       = "terraformstate-bucket-409415529627-us-west-2-an"
     key          = "eks/terraform.tfstate"
     region       = "us-west-2"
     encrypt      = true

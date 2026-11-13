@@ -68,7 +68,7 @@ variable "cluster_endpoint_public_access_cidrs" {
 variable "cluster_admin_arns" {
   description = "Extra IAM users/roles that get cluster-admin. The identity that runs terraform apply (the GitHub OIDC role) is admin automatically, so do NOT list it here."
   type        = list(string)
-  default     = ["arn:aws:iam::174022950431:user/POD7-DEVOPS"]
+  default = ["arn:aws:iam::409415529627:user/Pod7-admin"]
 }
 
 # ---- Worker nodes ----
@@ -93,19 +93,19 @@ variable "node_disk_size" {
 variable "node_desired_size" {
   description = "Desired number of worker nodes"
   type        = number
-  default     = 4
+  default     = 5
 }
 
 variable "node_min_size" {
   description = "Minimum number of worker nodes"
   type        = number
-  default     = 2
+  default     = 5
 }
 
 variable "node_max_size" {
   description = "Maximum number of worker nodes"
   type        = number
-  default     = 4
+  default     = 12
 }
 
 variable "key_pair_name" {
@@ -168,7 +168,7 @@ variable "letsencrypt_email" {
 variable "argocd_hostname" {
   description = "Public hostname for the Argo CD UI (must match manifests/argocd-ingress.yaml)"
   type        = string
-  default     = "argocd.digitalwitch.online"
+  default     = "argocd.pod7devopsengineers.online"
 }
 
 # ---- EFS ----
@@ -182,7 +182,7 @@ variable "efs_transition_to_ia" {
 variable "kubeconfig_bucket" {
   description = "S3 bucket where the admin kubeconfig is uploaded"
   type        = string
-  default     = "terraformstate-174022950431-us-west-2-an"
+  default     = "terraformstate-bucket-409415529627-us-west-2-an"
 }
 
 variable "kubeconfig_s3_key" {
