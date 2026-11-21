@@ -6,12 +6,12 @@ This project is our Terraform-based AWS platform for learning and delivering a K
 
 ## Our architecture
 
-We organize the platform around a VPC and a managed Kubernetes control plane:
+We organised the platform around a VPC and a managed Kubernetes control plane:
 
-- We create a VPC with two public and two private subnets across two Availability Zones.
+- We created a VPC with two public and two private subnets across two Availability Zones.
 - We use an internet gateway for public subnet traffic and NAT gateways for private worker-node egress.
-- We deploy an Amazon EKS control plane with both public and private API endpoint access.
-- We place our managed worker-node group in the private subnets.
+- We deployed an Amazon EKS control plane with both public and private API endpoint access.
+- We placed our managed worker-node group in the private subnets.
 - We provision encrypted EFS storage with mount targets, the EFS CSI driver, and an `efs-sc` StorageClass.
 - We expose applications through the NGINX Ingress Controller using an AWS Network Load Balancer.
 - We install cert-manager and a Let's Encrypt ClusterIssuer so we can manage TLS certificates.
@@ -60,7 +60,7 @@ aws sts get-caller-identity
 aws configure get region
 ```
 
-We should use environment variables, a named AWS profile, or temporary credentials. We must not commit credentials, private keys, or kubeconfigs to the repository.
+We should use environment variables, a named AWS profile, or temporary credentials. We did not commit credentials, private keys, or kubeconfigs to the repository.
 
 ## Preparing our deployment
 
